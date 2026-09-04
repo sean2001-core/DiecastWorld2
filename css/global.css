@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.8;
+    color: purple;
+    background-color: burlywood;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+header{
+    background-color: rgba(97, 44, 72, 0.286);
+    color: black;
+    padding: 30px 30px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+}
+
+footer{
+    background-color:  rgba(97, 44, 72, 0.286);
+    color: black;
+    padding: 50px 50px;
+    text-align: center;
+    font-size: medium;
+    width: 100%;
+    margin-top: auto;
+
+}
+
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    flex: 1;    
+}
+
+
+#hamburger_checkbox{
+    display: none;
+}
+
+#hamburger_menu{
+    display: none;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: circle();
+    white-space: nowrap;
+    border: 0;
+}
+
+nav{
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    flex: none;
+}
+
+nav a{
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover{
+    background: black;
+    color: white;
+    transform: none;
+}
+
+nav a.active_nav {
+    background: burlywood;
+    color: beige;
+}
+
+@media only screen and (max-width : 768px){
+    #hamburger_menu{
+        display: block;
+    }
+
+    #hamburger_icon{
+        display: block;
+    }
+
+    nav{
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        background-color: red;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        z-index: 999;
+        border-radius: 0 0 8px 8px;
+    }
+    
+    #hamburger_checkbox:checked ~ nav{
+        display: flex;
+    }
+
+    nav a{
+        padding: 16px;
+        font-size: 19px;
+        border-radius: 0;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width : 769px){
+    #hamburger_menu {
+        display: none;
+    }
+
+    nav{
+        display: flex !important;
+        flex-direction: row;
+        gap: 32px;
+        position: static;
+        width: auto;
+        background: none;
+    }
+}
